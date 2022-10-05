@@ -6,7 +6,7 @@ import "./zombiefeeding.sol";
 contract ZombieHelper is ZombieFeeding {
 
     modifier aboveLevel(uint _level, uint _zombieId) {
-        require(zombies[_zombieId].level >= _level);
+        require(zombies[_zombieId].level >= _level, "zombie level is less than required!");
         _;
     }
   
