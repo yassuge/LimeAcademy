@@ -1,0 +1,215 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "qty",
+						"type": "uint256"
+					}
+				],
+				"name": "addBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "userId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					}
+				],
+				"name": "borrowBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					}
+				],
+				"name": "getInventory",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "qty",
+						"type": "uint256"
+					}
+				],
+				"name": "removeBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "userId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					}
+				],
+				"name": "returnBook",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BookLibrary.sol": "BookLibrary"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BookLibrary.sol": {
+			"keccak256": "0x27564c63641c510c4a5155db1c40bc8f9b1e78d4fb64a6a545754ee49beb7766",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://e5bc7c534f2ef204e1177c170a4635a16d45244e209a42b90e4ed9af06386572",
+				"dweb:/ipfs/QmcYZ55irDv5z6bmxpah5arKd7DPmDKnq8mn1aL168dqEv"
+			]
+		},
+		"context.sol": {
+			"keccak256": "0x7f5b2ccf32d154f79674f12b14aee472a19f1bf67aac59337258cc259caa816b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b11cf6653c348f43910d01f7a651cd242e83a6deb78145dd6efc0b26fe64649a",
+				"dweb:/ipfs/QmYFT2rcdRpVBdEb8qzwZ4jipZYjkH9qKNVeL7ahAie3a7"
+			]
+		},
+		"ownable.sol": {
+			"keccak256": "0x37af64bdcb029ec5dcd0e695d2c7d6ff84148fa171fb4bc89254659c20b6a783",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8f6ab725ef4b2e0a29916b82ee7b0f8e6e950e573be2bd7b953670c6c79a7fb6",
+				"dweb:/ipfs/QmYhTH9ksdJLHZJjFVpFP5yePrEzcxds2a6VCdwsTQmtkZ"
+			]
+		}
+	},
+	"version": 1
+}
