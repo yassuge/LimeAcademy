@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-etherscan");
 
 // Go to https://www.alchemyapi.io, sign up, create
 // a new App in its dashboard, and replace "KEY" with its key
@@ -19,5 +20,17 @@ module.exports = {
       url: `https://goerli.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [GOERLI_PRIVATE_KEY]
     }
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at <https://etherscan.io/>
+    apiKey: "CHIRAADNUI814XIT9ST36R63UFNBNDKBDY"
   }
+
 };
+
+task("deploy-testnets", "Deploys contract on a provided network")
+    .setAction(async (taskArguments, hre, runSuper) => {
+        const deployElectionContract = require("./scripts/deploy_2");
+        await deployElectionContract(taskArguments);
+    });
