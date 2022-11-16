@@ -1,20 +1,37 @@
-const hre = require('hardhat')
-const ethers = hre.ethers;
+// We require the Hardhat Runtime Environment explicitly here. This is optional
+// but useful for running the script in a standalone fashion through `node <script>`.
+//
+// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
+// will compile your contracts, add the Hardhat Runtime Environment's members to the
+// global scope, and execute the script.
+const hre = require("hardhat");
 
-async function deployElectionContract() {
-    await hre.run('compile'); // We are compiling the contracts using subtask
-    const [deployer] = await ethers.getSigners(); // We are getting the deployer
+async function main() {
+  // const currentTimestampInSeconds = Math.round(Date.now() / 1000);
+  // const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
+  // const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+
+  // const lockedAmount = hre.ethers.utils.parseEther("1");
+
+  // const Lock = await hre.ethers.getContractFactory("Lock");
+  // const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+
+  // await lock.deployed();
+
+  // console.log(
+  //   `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+  // );
+
+  const USElection = await hre.ethers.getContractFactory("USElection");
+  const usElection = await USElection.deploy();
+  await usElection.deployed();
+  console.log("USElection deployed to:", usElection.address);
   
-    console.log('Deploying contracts with the account:', deployer.address); // We are printing the address of the deployer
-    console.log('Account balance:', (await deployer.getBalance()).toString()); // We are printing the account balance
-
-    const USElection = await ethers.getContractFactory("USElection"); // 
-    const usElectionContract = await USElection.deploy();
-    console.log('Waiting for USElection deployment...');
-    await usElectionContract.deployed();
-
-    console.log('USElection Contract address: ', usElectionContract.address);
-    console.log('Done!');
 }
-  
-module.exports = deployElectionContract;
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
