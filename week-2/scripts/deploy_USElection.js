@@ -23,4 +23,9 @@ async function deployElectionContract() {
   console.log('Done!');
 }
 
-module.exports = deployElectionContract;
+// module.exports = deployElectionContract;
+
+deployElectionContract().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
