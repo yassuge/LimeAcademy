@@ -5,23 +5,22 @@ const run = async function() {
     console.log("running interact.js")
     console.log(hre.ethers.version)
 
-    const provider = new hre.ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/")
+    // const provider = new hre.ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/")
+    const provider = new hre.ethers.providers.InfuraProvider("goerli", "API_KEY")
+
     const latestBlock = await provider.getBlock("latest")
     console.log(latestBlock.hash)
 
-    const wallet = new hre.ethers.Wallet("0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80", provider);
+    // const wallet = new hre.ethers.Wallet("0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80", provider);
+    const wallet = new hre.ethers.Wallet("PRIVATE_KEY", provider);
+
     const balance = await wallet.getBalance();
     console.log(hre.ethers.utils.formatEther(balance, 18))
     console.log(balance.toString())
 
-    const contractAddress = "0x610178dA211FEF7D417bC0e6FeD39F05609AD788"
+    const contractAddress = "DEPLOYED_CONTRACT"
     const electionContract = new hre.ethers.Contract(contractAddress, USElection.abi, wallet)
     console.log(electionContract)
-
-    // const USElectionFactory = await hre.ethers.getContractFactory("USElection");
-    // const electionContract_2 = await USElectionFactory.attach("0xc9707E1e496C12f1Fa83AFbbA8735DA697cdBf64");
-    // console.log(electionContract_2)
-
 
     const hasEnded = await electionContract.electionEnded()
     console.log("The election has ended:", hasEnded)
