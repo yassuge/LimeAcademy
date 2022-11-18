@@ -16,7 +16,7 @@ async function deployBookLibrary() {
 
   const BookLibrary = await ethers.getContractFactory("BookLibrary"); // 
   const bookLibraryContract = await BookLibrary.deploy();
-  console.log('Waiting for USElection deployment...');
+  console.log('Waiting for BookLibrary deployment...');
   await bookLibraryContract.deployed();
 
   console.log('BookLibrary Contract address: ', bookLibraryContract.address);
