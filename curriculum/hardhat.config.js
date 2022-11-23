@@ -30,7 +30,16 @@ module.exports = {
 };
 
 task("deploy-testnets", "Deploys contract on a provided network")
-    .setAction(async (taskArguments, hre, runSuper) => {
-        const deployElectionContract = require("./scripts/deploy_2");
-        await deployElectionContract(taskArguments);
-    });
+  .setAction(async (taskArguments, hre, runSuper) => {
+    const deployElectionContract = require("./scripts/deploy_2");
+    await deployElectionContract(taskArguments);
+  });
+
+task("deploy-LimeToken", "Deploys the contract", async (taskArgs, hre) => {
+  const LimeToken = await hre.ethers.getContractFactory("LimeToken");
+  const lime = await LimeToken.deploy();
+
+  await lime.deployed();
+
+  console.log("LimeCoin deployed to:", lime.address);
+});
