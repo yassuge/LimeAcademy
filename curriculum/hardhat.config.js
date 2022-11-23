@@ -1,15 +1,16 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomiclabs/hardhat-etherscan");
+const keys = require("../keys.json")
 
 // Go to https://www.alchemyapi.io, sign up, create
 // a new App in its dashboard, and replace "KEY" with its key
-const INFURA_API_KEY = "6e68db481a01433080e0e811ef4b83a9";
+const INFURA_API_KEY = keys.INFURA_API_KEY;
 
 // Replace this private key with your Goerli account private key
 // To export your private key from Metamask, open Metamask and
 // go to Account Details > Export Private Key
 // Beware: NEVER put real Ether into testing accounts
-const GOERLI_PRIVATE_KEY = "e804168f0f331ae5d48419ca4ad4193e75188ad4c42bb9f009b1f36ade0710ad";
+const GOERLI_PRIVATE_KEY = keys.PRIVATE_KEY;
 
 
 /** @type import('hardhat/config').HardhatUserConfig */
