@@ -6,30 +6,47 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "num",
+				"outputs": [
 					{
-						"internalType": "contract Bank",
-						"name": "_bank",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "attack",
+				"name": "sender",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_num",
+						"type": "uint256"
+					}
+				],
+				"name": "setVars",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getBalance",
+				"name": "value",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -54,7 +71,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HoneyPot.sol": "Attack"
+			"DelegateCall2.sol": "B"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -68,12 +85,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HoneyPot.sol": {
-			"keccak256": "0x7ebe334731104f0159206da02afa9d7dcbbf75e77ff76ad2fca9560053626e4e",
+		"DelegateCall2.sol": {
+			"keccak256": "0xb5517aabe3aa07e037d7cf243d111dbf0f75ea6a162265517664fd93bd3ef709",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://313560a727f8df3530e1a65644bebf4407f4f97afd6e16bda4ba1284cd3e2c73",
-				"dweb:/ipfs/QmZ23cPmW8Xjde2Ev1fubcTw8Ldo1bm8TSgHUX4fqmwRLq"
+				"bzz-raw://8137598522c35be833746da860eb33258803f11abadd75267da96f58b4bc6e74",
+				"dweb:/ipfs/QmW7rUgGWMtcPsJvzBdfR7x7LUtLSo18eTcoVGTUMUeVMG"
 			]
 		}
 	},

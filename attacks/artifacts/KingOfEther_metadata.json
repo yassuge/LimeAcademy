@@ -6,35 +6,33 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
 					{
-						"internalType": "contract Bank",
-						"name": "_bank",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "attack",
+				"name": "claimThrone",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getBalance",
+				"name": "king",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address",
 						"name": "",
-						"type": "uint256"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -54,7 +52,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HoneyPot.sol": "Attack"
+			"DenialOfService.sol": "KingOfEther"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -68,12 +66,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HoneyPot.sol": {
-			"keccak256": "0x7ebe334731104f0159206da02afa9d7dcbbf75e77ff76ad2fca9560053626e4e",
+		"DenialOfService.sol": {
+			"keccak256": "0x3c025771cb2cfec47afebdd05ff3b0bcb56d58abe7944c0b83821f821a49e8b0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://313560a727f8df3530e1a65644bebf4407f4f97afd6e16bda4ba1284cd3e2c73",
-				"dweb:/ipfs/QmZ23cPmW8Xjde2Ev1fubcTw8Ldo1bm8TSgHUX4fqmwRLq"
+				"bzz-raw://6c565d8c6ffb9976cb3ed899fe8c6b3708e9c29a84193fc845aefbb773404528",
+				"dweb:/ipfs/QmVvqUEhG47a5Zrc9amAcmLQcz9JcnaNrJe8vNtWC9d9Fe"
 			]
 		}
 	},

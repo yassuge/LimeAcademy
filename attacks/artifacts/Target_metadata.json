@@ -8,33 +8,37 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract Bank",
-						"name": "_bank",
+						"internalType": "address",
+						"name": "account",
 						"type": "address"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
-			},
-			{
-				"inputs": [],
-				"name": "attack",
-				"outputs": [],
-				"stateMutability": "payable",
+				"name": "isContract",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getBalance",
+				"name": "protected",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pwned",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "bool",
 						"name": "",
-						"type": "uint256"
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -54,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HoneyPot.sol": "Attack"
+			"ByPassContractCheck.sol": "Target"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -68,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HoneyPot.sol": {
-			"keccak256": "0x7ebe334731104f0159206da02afa9d7dcbbf75e77ff76ad2fca9560053626e4e",
+		"ByPassContractCheck.sol": {
+			"keccak256": "0x2ff76cd975b741e9f64b23ef2e150b98982d729d3345ed6e3f26def163962856",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://313560a727f8df3530e1a65644bebf4407f4f97afd6e16bda4ba1284cd3e2c73",
-				"dweb:/ipfs/QmZ23cPmW8Xjde2Ev1fubcTw8Ldo1bm8TSgHUX4fqmwRLq"
+				"bzz-raw://48715cea3354eca44c64b201fed82b3118e6d6a8e2594a330574a97412360903",
+				"dweb:/ipfs/QmfVYBfpqLmFyoZ8FfyLbJVzLzZwEVHPJ9HAYoL9MEZRe4"
 			]
 		}
 	},

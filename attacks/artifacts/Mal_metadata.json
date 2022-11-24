@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "log",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Vulnerability.sol": "Mal"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Vulnerability.sol": {
+			"keccak256": "0x692d6f0077cb4acf586c5ff54dd3cb20de166feef9c63ab449415af472d93120",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9043c772f61cda550dfc58334544bb4c726fb050ee3c7fcd481aafc9f1647dfd",
+				"dweb:/ipfs/QmSqzCqUEqN7F6h6P5Gg7UiB4kqMRV1v1yYDWmYzXtDxsv"
+			]
+		}
+	},
+	"version": 1
+}

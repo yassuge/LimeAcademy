@@ -6,38 +6,21 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "contract Bank",
-						"name": "_bank",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"inputs": [],
+				"stateMutability": "payable",
 				"type": "constructor"
 			},
 			{
-				"stateMutability": "payable",
-				"type": "fallback"
-			},
-			{
-				"inputs": [],
-				"name": "attack",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_guess",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "guess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -54,7 +37,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HoneyPot.sol": "Attack"
+			"BlockHash.sol": "GuessTheRandomNumber"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -68,12 +51,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HoneyPot.sol": {
-			"keccak256": "0x7ebe334731104f0159206da02afa9d7dcbbf75e77ff76ad2fca9560053626e4e",
+		"BlockHash.sol": {
+			"keccak256": "0xd6e0fecd9c6aa4393ea085921d75e65e3666c3e1efc5be682dad0e264fbcf688",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://313560a727f8df3530e1a65644bebf4407f4f97afd6e16bda4ba1284cd3e2c73",
-				"dweb:/ipfs/QmZ23cPmW8Xjde2Ev1fubcTw8Ldo1bm8TSgHUX4fqmwRLq"
+				"bzz-raw://02c77d228a4b763477bd3fd9ca47308b44cc7c673d7dadd8e056d88294c04999",
+				"dweb:/ipfs/QmWhoRxqhMgVcPTJ9wCmB83qvE7TDfp7mYtgPBssMWJoH5"
 			]
 		}
 	},

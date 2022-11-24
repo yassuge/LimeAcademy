@@ -8,8 +8,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract Bank",
-						"name": "_bank",
+						"internalType": "address",
+						"name": "_bar",
 						"type": "address"
 					}
 				],
@@ -17,27 +17,10 @@
 				"type": "constructor"
 			},
 			{
-				"stateMutability": "payable",
-				"type": "fallback"
-			},
-			{
 				"inputs": [],
-				"name": "attack",
+				"name": "callBar",
 				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -54,7 +37,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HoneyPot.sol": "Attack"
+			"Vulnerability.sol": "Foo"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -68,12 +51,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HoneyPot.sol": {
-			"keccak256": "0x7ebe334731104f0159206da02afa9d7dcbbf75e77ff76ad2fca9560053626e4e",
+		"Vulnerability.sol": {
+			"keccak256": "0x692d6f0077cb4acf586c5ff54dd3cb20de166feef9c63ab449415af472d93120",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://313560a727f8df3530e1a65644bebf4407f4f97afd6e16bda4ba1284cd3e2c73",
-				"dweb:/ipfs/QmZ23cPmW8Xjde2Ev1fubcTw8Ldo1bm8TSgHUX4fqmwRLq"
+				"bzz-raw://9043c772f61cda550dfc58334544bb4c726fb050ee3c7fcd481aafc9f1647dfd",
+				"dweb:/ipfs/QmSqzCqUEqN7F6h6P5Gg7UiB4kqMRV1v1yYDWmYzXtDxsv"
 			]
 		}
 	},

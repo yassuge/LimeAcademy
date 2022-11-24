@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
+					}
+				],
+				"name": "pwn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ByPassContractCheck.sol": "FailedAttack"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ByPassContractCheck.sol": {
+			"keccak256": "0x2ff76cd975b741e9f64b23ef2e150b98982d729d3345ed6e3f26def163962856",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://48715cea3354eca44c64b201fed82b3118e6d6a8e2594a330574a97412360903",
+				"dweb:/ipfs/QmfVYBfpqLmFyoZ8FfyLbJVzLzZwEVHPJ9HAYoL9MEZRe4"
+			]
+		}
+	},
+	"version": 1
+}
