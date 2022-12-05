@@ -14,7 +14,7 @@ async function deployElectionContract() {
   console.log('Deploying contracts with the account:', deployer.address); // We are printing the address of the deployer
   console.log('Account balance:', (await deployer.getBalance()).toString()); // We are printing the account balance
 
-  const USElection = await ethers.getContractFactory("USElection"); // 
+  const USElection = await ethers.getContractFactory("USElection", deployer); // 
   const usElectionContract = await USElection.deploy();
   console.log('Waiting for USElection deployment...');
   await usElectionContract.deployed();
