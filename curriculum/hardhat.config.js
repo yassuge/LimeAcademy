@@ -17,14 +17,14 @@ const PRIVATE_KEY_LOCAL = keys.PRIVATE_KEY_LOCAL
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
-  
+
   networks: {
     goerli: {
       url: `https://goerli.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [PRIVATE_KEY]
     },
     localhost: {
-      url:'http://127.0.0.1:8545/',
+      url: 'http://127.0.0.1:8545/',
       accounts: [PRIVATE_KEY_LOCAL]
     }
   },
@@ -37,9 +37,9 @@ module.exports = {
 
 };
 
-task("deploy-testnets", "Deploys contract on a provided network")
+task("deploy-USElection", "Deploys contract on a provided network")
   .setAction(async (taskArguments, hre, runSuper) => {
-    const deployElectionContract = require("./scripts/deploy_USElection");
+    const deployElectionContract = require("./scripts/USElection/deploy");
     await deployElectionContract(taskArguments);
   });
 
@@ -51,3 +51,11 @@ task("deploy-LimeToken", "Deploys the contract", async (taskArgs, hre) => {
 
   console.log("LimeCoin deployed to:", lime.address);
 });
+
+task("balance", "Prints an account's balance")
+  .addParam("account", "The account's address")
+  .setAction(async (taskArgs) => {
+    const balance = await ethers.provider.getBalance(taskArgs.account);
+
+    console.log(ethers.utils.formatEther(balance), "ETH");
+  });

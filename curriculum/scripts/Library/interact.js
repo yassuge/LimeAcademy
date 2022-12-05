@@ -1,9 +1,9 @@
-const PRIVATE_KEY = "e804168f0f331ae5d48419ca4ad4193e75188ad4c42bb9f009b1f36ade0710ad"
-const CONTRACT = "0x752101EDB61AA11E630258a6895c971E6Fe7A3Fc"
-const API_KEY = "6e68db481a01433080e0e811ef4b83a9"
+const PRIVATE_KEY = ""
+const CONTRACT = ""
+const API_KEY = ""
 
 const hre = require("hardhat");
-const BookLibrary = require('../artifacts/contracts/BookLibrary.sol/BookLibrary.json')
+const BookLibrary = require('../../artifacts/contracts/BookLibrary.sol/BookLibrary.json')
 
 const run = async function() {
     console.log("running interact_Library.js")
