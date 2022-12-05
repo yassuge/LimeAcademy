@@ -64,4 +64,8 @@ contract BookLibrary is Ownable {
         _borrowedBooks[bookId] += 1.0;
         _borrowedBooksPerUser[userId][bookId] += 1.0;
     }
+
+    function getAvailableInventory(string memory bookId) public view returns(uint){
+        return _availableBooks[bookId];
+    }
 }
