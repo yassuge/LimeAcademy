@@ -1,33 +1,35 @@
-const PRIVATE_KEY = ""
-const CONTRACT = ""
-const API_KEY = ""
-
 const hre = require("hardhat");
 const BookLibrary = require('../../artifacts/contracts/BookLibrary.sol/BookLibrary.json')
+const keys = require ("../../../keys.json")
+
+
+const provider = new hre.ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/")
+const PRIVATE_KEY = keys.PRIVATE_KEY_LOCAL
+const contractAddress = keys.CONTRACTS["LOCALHOST"]["Library"][0]
+
+// const provider = new hre.ethers.providers.InfuraProvider("goerli", keys.INFURA_API_KEY)
+// const PRIVATE_KEY = keys.PRIVATE_KEY
+// const contractAddress = keys.CONTRACTS["GOERLI"]["Library"][0]
 
 const run = async function() {
-    console.log("running interact_Library.js")
+    console.log("running Library/interact.js")
     console.log(hre.ethers.version)
-
-    // const provider = new hre.ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/")
-    const provider = new hre.ethers.providers.InfuraProvider("goerli", API_KEY)
 
     const latestBlock = await provider.getBlock("latest")
     console.log(latestBlock.hash)
 
-    // const wallet = new hre.ethers.Wallet("0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80", provider);
     const wallet = new hre.ethers.Wallet(PRIVATE_KEY, provider);
+    console.log("the wallet address is: ", wallet.address)
 
     const balance = await wallet.getBalance();
-    console.log(hre.ethers.utils.formatEther(balance, 18))
-    console.log(balance.toString())
+    console.log("The balance in ETH is: ", hre.ethers.utils.formatEther(balance, 18))
 
     // retreive contract
-    const contractAddress = CONTRACT
+    console.log("the BookLibrary address is: ", contractAddress)
     const libraryContract = new hre.ethers.Contract(contractAddress, BookLibrary.abi, wallet)
     
     // display owner of the contract
-    console.log(await libraryContract.owner())
+    console.log("The Owner of LibraryContract is: " ,await libraryContract.owner())
 
     // add book to inventory
     const transactionBookCreated = await libraryContract.addBook("Book_0", 10)
@@ -44,7 +46,7 @@ const run = async function() {
         console.log("Transaction was not successful")
         return 
     }
-    console.log(transactionRentBook)
+    // console.log(transactionRentBook)
 
 
     const availablePostBooks = await libraryContract.getInventory("Book_0")
@@ -57,7 +59,8 @@ const run = async function() {
         console.log("Transaction was not successful")
         return 
     }
-    console.log(transactionRetReceipt)
+    // console.log(transactionRetReceipt)
+
     const availablePostRetBooks = await libraryContract.getInventory("Book_0")
     console.log("available books of Book_0 are post borrow: ", availablePostRetBooks)
 }
